@@ -1,8 +1,8 @@
 #include <stdio.h>
 
-void ordonne(int x, int y)
+void ordonne(void)
 {
-  int tmp;
+  float x, y, tmp;
 
   if (x > y)
   {
@@ -12,9 +12,9 @@ void ordonne(int x, int y)
   }
 }
 
-void lire(int a, int x, int b)
+int lire(void)
 {
-//  int x, a, b;
+  int x, a, b;
 
   printf("borne entiere a = ");
   scanf("%d", &a);
@@ -27,44 +27,53 @@ void lire(int a, int x, int b)
   {
     printf("x = %d", x);
   }
-
+  return (0);
 }
 
 int menu(void)
 {
   int x;
 
-    printf(" oui : 1");
-    scanf("%d", &x);
-    printf(" non : 0");
-    scanf("%d", &x);
-    if (x == 1)
-    {
-      x = 0;
-      return (-1);
-    }
-    else
-      return (0);
+  printf("Voulez vous continuer ?\n\n");
+  printf("Non : 0\n");
+  printf("Oui : 1\n");
+  scanf("%d", &x);
+  printf("Votre choix : %d", x);
+  if (x == 1)
+  {
+    x = 0;
+    return (-1);
+  }
+  else
+    return (0);
 
 }
 
-/*int main()
+int main()
 {
-  int x, y, tmp;
-
-  printf("entrer X compris entre 0 et 100: ");
-  scanf("%d", &x);
-  printf("entrer Y compris entre 10 et 50: ");
-  scanf("%d", &y);
-  if (100 >= x >= 0 || 50 >= y >= 10)
-  {
-    if (y > x)
-    {
-      tmp = y;
-      y = x;
-      x = tmp;
-    }
-      printf("X = %d; Y = %d\n", x, y);
-  }
+  ordonne();
+  lire();
+  menu();
   return (0);
-}*/
+}
+/*
+   int main()
+   {
+   int x, y, tmp;
+
+   printf("entrer X compris entre 0 et 100: ");
+   scanf("%d", &x);
+   printf("entrer Y compris entre 10 et 50: ");
+   scanf("%d", &y);
+   if (100 >= x >= 0 || 50 >= y >= 10)
+   {
+   if (y > x)
+   {
+   tmp = y;
+   y = x;
+   x = tmp;
+   }
+   printf("X = %d; Y = %d\n", x, y);
+   }
+   return (0);
+   }*/
